@@ -1,0 +1,49 @@
+name: build
+
+on: workflow_dispatch
+
+jobs:
+  docker-build:
+    runs-on: ubuntu-latest
+    steps:
+      -
+        name: Checkout
+        uses: actions/checkout@v2
+      -
+        name: Set up QEMU
+        uses: docker/setup-qemu-action@v1
+      -
+        name: Set up Docker Buildx
+        uses: docker/setup-buildx-action@v1
+      -
+        name: Login to DockerHub
+        uses: docker/login-action@v1
+        with:
+          username: ${{ secrets.DOCKERHUB_USERNAME }}
+          password: ${{ secrets.DOCKERHUB_TOKEN }}
+      -
+        name: Build and push v8.0
+        uses: docker/build-push-action@v2
+        with:
+          context: '8.0'
+          push: true
+          platforms: |
+            linux/386
+            linux/amd64
+            linux/arm/v6
+            linux/arm/v7
+            linux/arm64/v8
+            linux/ppc64le
+            linux/s390x
+          build-args: PHP_VERSION=8.0.2
+          tags: |
+            flrnrud7/laravel-php-fpm:latest
+            flrnrud7/laravel-php-fpm:8.0
+            flrnrud7/laravel-php-fpm:8.0.2
+      -
+        name: Update repo description
+        uses: peter-evans/dockerhub-description@v2
+        with:
+          username: ${{ secrets.DOCKERHUB_USERNAME }}
+          password: ${{ secrets.DOCKERHUB_TOKEN }}
+          repository: flrnrud7/laravel-php-fpm
