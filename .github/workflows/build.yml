@@ -35,11 +35,11 @@ jobs:
             linux/arm64/v8
             linux/ppc64le
             linux/s390x
-          build-args: PHP_VERSION=8.0.2
+          build-args: PHP_VERSION=8.0.3
           tags: |
             flrnrud7/laravel-php-fpm:latest
             flrnrud7/laravel-php-fpm:8.0
-            flrnrud7/laravel-php-fpm:8.0.2
+            flrnrud7/laravel-php-fpm:8.0.3
       -
         name: Update repo description
         uses: peter-evans/dockerhub-description@v2
