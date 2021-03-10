@@ -88,7 +88,7 @@ ENV \
     PHP_FPM_CLEAR_ENV="1" \
     \
 # Xdebug configure.
-    PHP_XDEBUG_MODE="develop" \
+    PHP_XDEBUG_MODE="off" \
     PHP_XDEBUG_CLIENT_HOST="host.docker.internal" \
     PHP_XDEBUG_CLIENT_PORT="9003" \
     PHP_XDEBUG_START_UPON_ERROR="yes" \

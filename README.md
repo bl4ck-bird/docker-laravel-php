@@ -64,7 +64,7 @@ services:
 | `PHP_FPM_PM_PROCESS_IDLE_TIMEOUT` | `pm.process_idle_timeout` on `php-fpm.d/www.conf` | `10s` |
 | `PHP_FPM_PM_MAX_REQUESTS` | `pm.max_requests` on `php-fpm.d/www.conf` | `0` |
 | `PHP_FPM_CLEAR_ENV` | `clear_env` on `php-fpm.d/www.conf` | `1` |
-| `PHP_XDEBUG_MODE` | `xdebug.mode` on `php.ini` | `develop` |
+| `PHP_XDEBUG_MODE` | `xdebug.mode` on `php.ini` | `off` |
 | `PHP_XDEBUG_CLIENT_HOST` | `xdebug.client_host` on `php.ini` | `host.docker.internal` |
 | `PHP_XDEBUG_CLIENT_PORT` | `xdebug.client_port` on `php.ini` | `9003` |
 | `PHP_XDEBUG_START_UPON_ERROR` | `xdebug.start_upon_error` on `php.ini` | `yes` |
