@@ -6,7 +6,7 @@ Docker image for a php-fpm container crafted to run Laravel based applications.
 
 ## Differences from the official php docker image
 
-- Install php extensions: `zip`, `opcache`, `bcmath`, `pdo_mysql`, `igbinary`, `imagick`, `redis`, `pcntl`, `xdebug`.
+- Install php extensions: `zip`, `opcache`, `bcmath`, `pdo_mysql`, `igbinary`, `imagick`, `redis`, `pcntl`, `sockets`, `xdebug`.
 - Add `composer`.
 
 ## Usage
