@@ -16,8 +16,8 @@ RUN cd /; \
     docker-php-source extract; \
     \
 # Install Zip, Opcache, BCMath, PDO_MYSQL extension.
-    docker-php-ext-install -j$(nproc) zip opcache bcmath pdo_mysql; \
-    docker-php-ext-enable zip opcache bcmath pdo_mysql; \
+    docker-php-ext-install -j$(nproc) zip opcache bcmath pdo_mysql pcntl; \
+    docker-php-ext-enable zip opcache bcmath pdo_mysql pcntl; \
     \
 # Install igbinary extension.
     pecl bundle -d /usr/src/php/ext igbinary; \
