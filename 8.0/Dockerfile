@@ -38,6 +38,11 @@ RUN cd /; \
     docker-php-ext-install -j$(nproc) redis; \
     docker-php-ext-enable redis; \
     \
+# Install Swoole extension.
+    pecl bundle -d /usr/src/php/ext swoole; \
+    docker-php-ext-configure swoole; \
+    docker-php-ext-install -j$(nproc) swoole; \
+    docker-php-ext-enable swoole; \
 # Install xdebug extension.
     pecl bundle -d /usr/src/php/ext xdebug; \
     docker-php-ext-configure xdebug; \
