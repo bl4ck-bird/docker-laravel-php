@@ -11,11 +11,11 @@ Docker image for a php-fpm container crafted to run Laravel based applications.
 
 ## Usage
 
-### Install dependen packages.
+### Install dependency packages.
 
 1. Run docker command.
     ```bash
-    docker run --rm -v ${pwd}:/var/www/html flrnrud7/laravel-php-fpm:latest composer install
+    docker run --rm -v $(pwd):/var/www/html flrnrud7/laravel-php-fpm:latest composer install
     ```
 2. Run docker-compose command.
     ```bash
